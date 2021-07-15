@@ -8,7 +8,7 @@ public class firstTest {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.saucedemo.com/");
+		driver.get("https://www.hola.com/");
 		driver.quit();
 	}
 }
