@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: selenium.testing.practice.JUnitTestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.133 s <<< FAILURE! - in selenium.testing.practice.JUnitTestSuite
+testHomePageHasAHeader(selenium.testing.practice.SampleJUnitTest)  Time elapsed: 0.07 s  <<< ERROR!
+ru.stqa.selenium.factory.DriverCreationError: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
+
