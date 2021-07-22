@@ -3,7 +3,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Navigation1 {
@@ -15,7 +14,7 @@ public class Navigation1 {
     public void navigationTest()
     {
         WebDriver driver = new FirefoxDriver();
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
         //driver.quit();
     }
 	

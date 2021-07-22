@@ -21,3 +21,4 @@ Version 4 -> Soon W3C support
 
 Para saber si las interacciones sirven para determinado navegador -> webdriver-herald.herokuapp.com
 
+ExplicitWait -> Se asegura que el browser esté en determinado estado al encontrar un elemento
