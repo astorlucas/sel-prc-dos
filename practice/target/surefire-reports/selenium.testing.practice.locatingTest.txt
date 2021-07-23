@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: selenium.testing.practice.locatingTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.243 s <<< FAILURE! - in selenium.testing.practice.locatingTest
+elementsQuiz1(selenium.testing.practice.locatingTest)  Time elapsed: 2.236 s  <<< ERROR!
+java.lang.NullPointerException
+	at selenium.testing.practice.locatingTest.elementsQuiz1(locatingTest.java:32)
+
