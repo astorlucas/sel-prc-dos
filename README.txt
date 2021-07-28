@@ -31,5 +31,22 @@ XPATH - IMPORTANTE
 '..' DOUBLE PERIOD, SELECCIONA EL PADRE DEL NODO ACTUAL
 '@' PERMITE SELECCIONAR ATRIBUTOS
 '*' COINCIDE CON CUALQUIER ELEMENTO NODO
+'contains(text(),<<string>>)' EJEMPLO QUE PERMITE ENCONTRAR UN TEXTO BY UN XPATH
+'parent' PADRE DIRECTO DEL ELEMENTO
+'sibling' AL MISMO NIVEL, HERMANO DIRECTO
+'children' UN NIVEL MÁS ABAJO, HIJO DIRECTO
+COMPUND CLASSES (ATRIBUTO CLASS QUE TIENE ESPACIO) NO SE PUEDEN SELECCIONAR CON BYCLASSNAME-SOLO SE PUEDE USAR XPATH
+'[@atributo='nombre'][@atributo2='nombre2']' EJEMPLO PARA SELECCIONAR MÁS DE UN ATRIBUTO
+
+CSS VS XPATH
+XPATH
+- Puede recorrer el DOM de hijo a padre, para arriba y para abajo
+- Puede localizar elementos por texto
+- Es más legible por computadoras
+CSS SELECTOR
+- Solo puede recorrer el DOM de padre a hijo y de derecha a izquierda
+- Es más legible por seres humanos
+- Los frontend devs lo entienden mejor
+- MUY BUENO PARA AUTOMATIZACIÓN MOBILE, XPATH ES BASTANTE LENTO EN MOBILE , IOS NI SIQUIERA TIENE UN XML MAP, DEBE SER CREADO POR APPIUM
 
 locators cheat sheet --> https://www.automatetheplanet.com/selenium-webdriver-locators-cheat-sheet/
