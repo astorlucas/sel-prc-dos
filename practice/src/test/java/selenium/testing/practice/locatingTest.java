@@ -20,7 +20,7 @@ public class locatingTest {
 	}
 
 	@Test
-	public void elementsQuiz1() {
+	public void locatingTest1() {
 		// 1. Instantiate the driver
 		WebDriver driver = new ChromeDriver();
 		// 2. navigate to the URL
