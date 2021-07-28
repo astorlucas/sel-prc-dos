@@ -20,7 +20,7 @@ public class locatingTest {
 	}
 
 	@Test
-	public void locatingTest1() {
+	public void locatingAssertingTest() {
 		// 1. Instantiate the driver
 		WebDriver driver = new ChromeDriver();
 		// 2. navigate to the URL

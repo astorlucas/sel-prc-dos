@@ -21,17 +21,17 @@ public class locatorsTest {
 		// 2. navigate to the URL
 		driver.get("https://www.saucedemo.com/");
 		// 3. Find elements
-		// ID
+		// ID atributo id de un elemento HTML
 		driver.findElement(By.id("password"));
-		// Name
+		// Name atributo nombre de un elemento HTML
 		driver.findElement(By.name("password"));
-		// Class name
+		// Class name nombre del atributo class de un elemento HTML
 		//driver.findElement(By.className("input_error form_input"));
-		// Tag name
+		// Tag name atributo tag de un elemento HTML
 		driver.findElement(By.tagName("input"));
-		// Css selector
+		// Css selector se puede copiar con click derecho
 		driver.findElement(By.cssSelector("#login-button"));
-		// Xpath
+		// Xpath el mejor localizador, se puede copiar con click derecho
 		driver.findElement(By.xpath("//*[@id=\"password\"]"));
 		// Link text
 		//driver.findElement(By.linkText("Sign in"));
