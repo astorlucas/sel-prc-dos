@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class locatingTest {
+public class LocatingTest {
 	@BeforeClass
 	public static void setupClass() {
 		WebDriverManager.chromedriver().setup();

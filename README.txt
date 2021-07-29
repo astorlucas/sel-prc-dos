@@ -24,7 +24,7 @@ Para saber si las interacciones sirven para determinado navegador -> webdriver-h
 ExplicitWait -> Se asegura que el browser esté en determinado estado al encontrar un elemento
 
 XPATH - IMPORTANTE
-
+	
 '/' SELECCIONA DEL NODO RAIZ
 '//' SELECCCIONA NODOS EN EL DOCUMENTO DEL NODO ACTUAL, QUE COINCIDAN CON LA SELECCION, NO IMPORTA DONDE ESTÉN
 '.' O TAMBIEN LLAMADO PERIOD, SELECCIONA EL NODO ACTUAL
@@ -50,3 +50,9 @@ CSS SELECTOR
 - MUY BUENO PARA AUTOMATIZACIÓN MOBILE, XPATH ES BASTANTE LENTO EN MOBILE , IOS NI SIQUIERA TIENE UN XML MAP, DEBE SER CREADO POR APPIUM
 
 locators cheat sheet --> https://www.automatetheplanet.com/selenium-webdriver-locators-cheat-sheet/
+
+Implicit wait
+Le dice al webdriver que espere por un intervalo determinado de tiempo antes de tirar una excepcion de elemento no encontrado
+Explicit wait
+Le dice al webdriver que espere hasta que se cumpla cierta condición como puede ser, que un elemento esté visible
+

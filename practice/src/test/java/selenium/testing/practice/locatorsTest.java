@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class locatorsTest {
+public class LocatorsTest {
 	@BeforeClass
 	public static void setupClass() {
 		WebDriverManager.chromedriver().setup();
@@ -33,7 +33,7 @@ public class locatorsTest {
 		driver.findElement(By.cssSelector("#login-button"));
 		// Xpath el mejor localizador, se puede copiar con click derecho
 		driver.findElement(By.xpath("//*[@id=\"password\"]"));
-		// Link text
+		// Link text 
 		//driver.findElement(By.linkText("Sign in"));
 		// Partial link text
 		//driver.findElement(By.partialLinkText("sign"));
