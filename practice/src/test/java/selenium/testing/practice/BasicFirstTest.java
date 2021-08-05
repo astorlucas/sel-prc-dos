@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -43,8 +44,11 @@ public class BasicFirstTest {
 		//Getting in
 		driver.get("https://www.saucedemo.com/");
 		//Logging in
+		//Find and act method
 		driver.findElement(username).sendKeys("standard_user");
-		driver.findElement(password).sendKeys("secret_sauce");
+		//Find store and act
+		WebElement psswdInput = driver.findElement(password);
+		psswdInput.sendKeys("secret_sauce");
 		driver.findElement(btn_Login).click();
 		//Adding to cart
 		driver.findElement(btn_AddToCartBackpack).click();

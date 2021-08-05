@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Navigation1 {
+public class NavigationTest {
 	@BeforeClass
 	public static void setupClass() {
         WebDriverManager.firefoxdriver().setup();
