@@ -91,6 +91,7 @@ public class ActionsTest {
 				pause(1000).
 				perform();
 		element = driver.findElement(By.id("result"));
+		//most asserts have message,equals
 		assertEquals("message if fail","You entered: RIGHT",element.getText());
 	}
 
