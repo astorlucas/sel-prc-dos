@@ -1,5 +1,6 @@
 package selenium.testing.practice;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.*;
 
@@ -15,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ActionsTest {
 	WebDriver driver;
-	//Se crea el objeto actions
+	// Se crea el objeto actions
 	Actions actions;
 	By username = By.xpath("//*[@id=\"user-name\"]");
 	By password = By.xpath("//*[@id=\"password\"]");
@@ -30,7 +32,8 @@ public class ActionsTest {
 	By btn_Finish = By.xpath("//*[@id=\"finish\"]");
 	By success_Message = By.xpath("//*[@id=\"checkout_complete_container\"]/img");
 	By label_psswd = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]");
-	
+	//Herokuapp
+	By option_selector = By.xpath("//*[@id=\"dropdown\"]");
 	@Before
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
@@ -40,31 +43,70 @@ public class ActionsTest {
 
 	@After
 	public void tearDown() {
-		//driver.quit();
+		// driver.quit();
 	}
 
 	@Test
 	public void testingActions() {
-		//TODO - ACTIONS NOT WORKING
-		//Getting in
+		// TODO - ACTIONS NOT WORKING
+		// Getting in
 		driver.get("https://www.saucedemo.com/");
-		//ACTIONS EXAMPLES
-		//Con el actions, le pasas un webelement y tenes que poner build y perform para que funcione
+		// ACTIONS EXAMPLES
+		// Con el actions, le pasas un webelement y tenes que poner build y perform para
+		// que funcione
 		assertTrue(driver.findElement(label_psswd).isDisplayed());
 		actions.moveToElement(driver.findElement(label_psswd)).doubleClick().build().perform();
-		//Keyboard commands
+		// Keyboard commands
 		actions.keyDown(Keys.COMMAND).build().perform();
 		actions.sendKeys("c").build().perform();
 		actions.keyUp(Keys.COMMAND).build().perform();
-		//actions.build().perform();
+		// actions.build().perform();
 		driver.findElement(password).click();
 		actions.keyDown(Keys.COMMAND).build().perform();
 		actions.sendKeys("v").build().perform();
 		actions.keyUp(Keys.COMMAND).build().perform();
-		//actions.build().perform();
-		//SendKeys de actions, sirve para mandarle 
-		//keys a todo el borwser por ejemplo para abrir consola
-
-
+		// actions.build().perform();
+		// SendKeys de actions, sirve para mandarle
+		// keys a todo el borwser por ejemplo para abrir consola
 	}
+
+	@Test
+	public void testingDropDown() {
+		driver.get("https://the-internet.herokuapp.com/dropdown");
+		//Select option 1
+		WebElement selector = driver.findElement(option_selector);
+		selector.sendKeys("Option 2");
+		//assertEquals();
+		//assertTrue(selector.ge)
+	}
+	@Test
+	public void testingHovers() {
+		driver.get("https://the-internet.herokuapp.com/hovers");
+		//Select option 1
+		WebElement selector = driver.findElement(option_selector);
+		selector.sendKeys("Option 2");
+		//assertEquals();
+		//assertTrue(selector.ge)
+	}
+	@Test
+	public void testingContext_Menu() {
+		driver.get("https://the-internet.herokuapp.com/context_menu");
+		//Select option 1
+		WebElement selector = driver.findElement(option_selector);
+		selector.sendKeys("Option 2");
+		driver.switchTo().alert().accept();
+		//assertEquals();
+		//assertTrue(selector.ge)
+	}
+	@Test
+	public void testingKeyPress() {
+		driver.get("https://the-internet.herokuapp.com/key_presses");
+		//Select option 1
+		WebElement selector = driver.findElement(option_selector);
+		selector.sendKeys("Option 2");
+		driver.switchTo().alert().accept();
+		//assertEquals();
+		//assertTrue(selector.ge)
+	}
+
 }
