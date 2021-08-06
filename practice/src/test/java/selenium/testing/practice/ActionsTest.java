@@ -1,6 +1,7 @@
 package selenium.testing.practice;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -17,8 +18,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ActionsTest {
 	WebDriver driver;
+	WebElement element;
 	// Se crea el objeto actions
-	Actions actions;
 	By username = By.xpath("//*[@id=\"user-name\"]");
 	By password = By.xpath("//*[@id=\"password\"]");
 	By btn_Login = By.xpath("//*[@id=\"login-button\"]");
@@ -38,7 +39,6 @@ public class ActionsTest {
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		actions = new Actions(driver);
 	}
 
 	@After
@@ -46,67 +46,53 @@ public class ActionsTest {
 		// driver.quit();
 	}
 
-	@Test
-	public void testingActions() {
-		// TODO - ACTIONS NOT WORKING
-		// Getting in
-		driver.get("https://www.saucedemo.com/");
-		// ACTIONS EXAMPLES
-		// Con el actions, le pasas un webelement y tenes que poner build y perform para
-		// que funcione
-		assertTrue(driver.findElement(label_psswd).isDisplayed());
-		actions.moveToElement(driver.findElement(label_psswd)).doubleClick().build().perform();
-		// Keyboard commands
-		actions.keyDown(Keys.COMMAND).build().perform();
-		actions.sendKeys("c").build().perform();
-		actions.keyUp(Keys.COMMAND).build().perform();
-		// actions.build().perform();
-		driver.findElement(password).click();
-		actions.keyDown(Keys.COMMAND).build().perform();
-		actions.sendKeys("v").build().perform();
-		actions.keyUp(Keys.COMMAND).build().perform();
-		// actions.build().perform();
-		// SendKeys de actions, sirve para mandarle
-		// keys a todo el borwser por ejemplo para abrir consola
-	}
 
 	@Test
 	public void testingDropDown() {
 		driver.get("https://the-internet.herokuapp.com/dropdown");
-		//Select option 1
+		WebElement option1 = driver.findElement(By.cssSelector("option[value='1']"));
+		WebElement option2 = driver.findElement(By.cssSelector("option[value='2']"));
+		//Select option 2
 		WebElement selector = driver.findElement(option_selector);
 		selector.sendKeys("Option 2");
-		//assertEquals();
-		//assertTrue(selector.ge)
+		assertTrue(option2.isSelected());
+		assertFalse(option1.isSelected());
 	}
 	@Test
 	public void testingHovers() {
 		driver.get("https://the-internet.herokuapp.com/hovers");
-		//Select option 1
-		WebElement selector = driver.findElement(option_selector);
-		selector.sendKeys("Option 2");
-		//assertEquals();
-		//assertTrue(selector.ge)
+		element = driver.findElement(By.className("figure"));
+		Actions actions = new Actions(driver);
+		//No le puse .build() porque eso lo unico que hace es permitirme guardar esto en un objeto action
+		actions.moveToElement(element).perform();
+		
+		element = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/h5"));////*[contains(text(),'name: user1')]
+		assertTrue("user1 should appear, this is a message test", element.isDisplayed());
 	}
 	@Test
 	public void testingContext_Menu() {
 		driver.get("https://the-internet.herokuapp.com/context_menu");
 		//Select option 1
-		WebElement selector = driver.findElement(option_selector);
-		selector.sendKeys("Option 2");
+		element = driver.findElement(By.id("hot-spot"));
+		Actions actions = new Actions(driver);
+		actions.contextClick(element).perform();
 		driver.switchTo().alert().accept();
-		//assertEquals();
-		//assertTrue(selector.ge)
+
 	}
 	@Test
 	public void testingKeyPress() {
 		driver.get("https://the-internet.herokuapp.com/key_presses");
 		//Select option 1
-		WebElement selector = driver.findElement(option_selector);
-		selector.sendKeys("Option 2");
-		driver.switchTo().alert().accept();
-		//assertEquals();
-		//assertTrue(selector.ge)
+		element = driver.findElement(By.id("target"));
+		element.click();
+		Actions actions = new Actions(driver);
+		actions.
+				sendKeys(Keys.ARROW_RIGHT).
+				pause(1000).
+				perform();
+		element = driver.findElement(By.id("result"));
+		assertEquals("message if fail","You entered: RIGHT",element.getText());
 	}
+
 
 }
