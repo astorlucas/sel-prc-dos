@@ -56,3 +56,7 @@ Le dice al webdriver que espere por un intervalo determinado de tiempo antes de 
 Explicit wait
 Le dice al webdriver que espere hasta que se cumpla cierta condición como puede ser, que un elemento esté visible
 
+Which TAB WE ARE ACTUALLY ON
+
+.getWindowHandle() <-- Devuelve un String que identifica en que tab nos encontramos
+.getWindowHandles() <-- Devuelve un String que identifica todas las tabs actualmente abiertas
