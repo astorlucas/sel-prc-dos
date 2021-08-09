@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class JSExecutorTest {
 	WebDriver driver;
-	//CASTING DRIVER INTO JSEXECUTOR	
+	
 	
 	@Before
 	public void setUp() {
@@ -31,6 +31,7 @@ public class JSExecutorTest {
 	@Test
 	public void openWindowTest() {
 		driver.get("https://the-internet.herokuapp.com/windows");
+		//CASTING DRIVER INTO JSEXECUTOR	
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.open('https://the-internet.herokuapp.com/windows/new');");
 		//consiguiendo la primer pestaña

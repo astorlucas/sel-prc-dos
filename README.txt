@@ -60,3 +60,6 @@ Which TAB WE ARE ACTUALLY ON
 
 .getWindowHandle() <-- Devuelve un String que identifica en que tab nos encontramos
 .getWindowHandles() <-- Devuelve un String que identifica todas las tabs actualmente abiertas
+
+DIFFERENCE BETWEEN NAVIGATE TO AND GET
+navigate to and get are the same, the interface navigate facilita ciertos metodos como back y forward para el historial.
